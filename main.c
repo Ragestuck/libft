@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rsk <rsk@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 13:44:17 by rjakubec          #+#    #+#             */
-/*   Updated: 2017/11/08 14:18:07 by rjakubec         ###   ########.fr       */
+/*   Updated: 2017/11/08 16:57:13 by rsk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 #include "proto.h"
 
 int		main(int ac, char **av)
@@ -38,5 +39,18 @@ int		main(int ac, char **av)
 	else
 		printf("Result : KO\n\n");
 	
-	
+	printf("Test de la fonction ft_isprint :\nft_isprint(\"ABC\")\n");
+	printf("Expected : \"%d\" | Returned : \"%d\"\n\n", isprint(10), ft_isprint(10));
+
+	printf("Test de la fonction ft_iascii :\nft_isascii(\"ABC\")\n");
+	printf("Expected : \"%d\" | Returned : \"%d\"\n\n", isascii(0), ft_isascii(0));
+
+	printf("Test de la fonction ft_isalnum :\nft_isalnum(\"ABC\")\n");
+	printf("Expected : \"%d\" | Returned : \"%d\"\n\n", isalnum(130), ft_isalnum(130));
+
+	printf("Test de la fonction ft_isalnum :\nft_isdigit(\"ABC\")\n");
+	printf("Expected : \"%d\" | Returned : \"%d\"\n\n", isdigit(50), ft_isdigit(50));
+
+	printf("Test de la fonction ft_isalnum :\nft_isalpha(\"ABC\")\n");
+	printf("Expected : \"%d\" | Returned : \"%d\"\n\n", isalpha(70), ft_isalpha(70));
 }
