@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rsk <rsk@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 16:40:46 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/14 13:13:35 by rsk              ###   ########.fr       */
+/*   Created: 2017/11/14 12:39:04 by rsk               #+#    #+#             */
+/*   Updated: 2017/11/14 13:14:09 by rsk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalnum(int c)
+#include "libft.h"
+#include <stdlib.h>
+
+char *ft_strdup(const char *s)
 {
-	if((c > 47 && c < 58) || (c > 64 && c < 91) || (c > 96 && c < 123))
-		return (1);
-	return (0);
+	char *ret;
+
+	ret = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))
+	ft_strcpy(ret, s);
+	return (ret);
 }
