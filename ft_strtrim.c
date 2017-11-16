@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsk <rsk@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 10:17:35 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/16 10:25:42 by rsk              ###   ########.fr       */
+/*   Updated: 2017/11/16 15:40:12 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strtrim(const char *s)
 {
 	char	*d;
 	int		i;
-	
+
 	i = 0;
 	d = (char *)malloc(sizeof(char) * (strlen(s) + 1));
 	if (!d)

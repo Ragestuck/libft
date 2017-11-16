@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsk <rsk@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 13:15:55 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/14 13:41:31 by rsk              ###   ########.fr       */
+/*   Updated: 2017/11/16 15:37:13 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memalloc(size_t n)
+void	*ft_memalloc(size_t n)
 {
 	void *ptr;
 

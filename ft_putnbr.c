@@ -3,19 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsk <rsk@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 11:19:45 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/16 11:26:05 by rsk              ###   ########.fr       */
+/*   Updated: 2017/11/16 15:31:56 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+#include "libft.h"
 
 void	ft_putnbrrec(int n)
 {
@@ -32,10 +28,4 @@ void	ft_putnbr(int n)
 		n *= -1;
 	}
 	ft_putnbrrec(n);
-}
-
-int		main(void)
-{
-	ft_putnbr(-852);
-	return (0);
 }
