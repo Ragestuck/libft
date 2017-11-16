@@ -6,7 +6,7 @@
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 10:11:05 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/16 15:42:12 by rjakubec         ###   ########.fr       */
+/*   Updated: 2017/11/16 17:57:09 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 
 	i = 0;
 	j = 0;
-	s = (char *)malloc(sizeof(char) * (strlen(s1) + strlen(s2) + 1));
+	s = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!s)
 		return (NULL);
 	while (s1[i])
