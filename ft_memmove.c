@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/14 13:11:00 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/16 16:37:14 by rjakubec         ###   ########.fr       */
+/*   Created: 2017/11/14 13:00:15 by rsk               #+#    #+#             */
+/*   Updated: 2017/11/16 17:04:39 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char *t;
-
-	t = (unsigned char *)s;
+	dest = malloc(sizeof(int) * n);
+	if (!dest)
+		return (NULL);
 	while (n--)
-		*t++ = c;
-	return (s);
+		dest[n] = (void *)src[n];
+	return (dest);
 }

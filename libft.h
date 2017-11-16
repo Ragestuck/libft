@@ -6,12 +6,14 @@
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 15:43:09 by rjakubec          #+#    #+#             */
-/*   Updated: 2017/11/16 15:55:08 by rjakubec         ###   ########.fr       */
+/*   Updated: 2017/11/16 16:27:08 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# include <stdlib.h>
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);

@@ -6,7 +6,7 @@
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 11:44:46 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/16 16:00:31 by rjakubec         ###   ########.fr       */
+/*   Updated: 2017/11/16 16:04:52 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_atoi(const char *str)
 
 	nb = 0;
 	i = 0;
-	while (str[i] == '\t' || str[i] == ' ' || str[i] == '\n' || str[i] == '\v' 
+	while (str[i] == '\t' || str[i] == ' ' || str[i] == '\n' || str[i] == '\v'
 			|| str[i] == '\r' || str[i] == '\f')
 		i++;
 	sign = ((str[i] == '-') ? -1 : 1);
@@ -30,12 +30,4 @@ int		ft_atoi(const char *str)
 	}
 	nb *= sign;
 	return (nb);
-}
-
-int		main(void)
-{
-	int nb = ft_atoi("8734");
-
-	ft_putnbr(nb);
-	return (0);
 }
