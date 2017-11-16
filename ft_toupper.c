@@ -6,19 +6,13 @@
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 14:03:44 by rjakubec          #+#    #+#             */
-/*   Updated: 2017/11/08 14:09:44 by rjakubec         ###   ########.fr       */
+/*   Updated: 2017/11/16 19:57:44 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_toupper(char *str)
+int		ft_toupper(int c)
 {
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] <= 'z' && str[i] >= 'a')
-			str[i] -= 32;
-		i++;
-	}
+	if (c <= 'z' && c >= 'a')
+		c -= 32;
+	return (c);
 }

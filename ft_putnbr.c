@@ -6,21 +6,21 @@
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 11:19:45 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/16 15:31:56 by rjakubec         ###   ########.fr       */
+/*   Updated: 2017/11/16 18:56:58 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-void	ft_putnbrrec(int n)
+static	void	ft_putnbrrec(int n)
 {
 	if ((n / 10) > 0)
 		ft_putnbrrec(n / 10);
 	ft_putchar((n % 10) + '0');
 }
 
-void	ft_putnbr(int n)
+void			ft_putnbr(int n)
 {
 	if (n < 0)
 	{

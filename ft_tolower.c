@@ -6,19 +6,13 @@
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 13:38:04 by rjakubec          #+#    #+#             */
-/*   Updated: 2017/11/08 14:03:56 by rjakubec         ###   ########.fr       */
+/*   Updated: 2017/11/16 19:58:18 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_tolower(char *str)
+int		ft_tolower(int c)
 {
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] <= 'Z' && str[i] >= 'A')
-			str[i] += 32;
-		i++;
-	}
+	if (c <= 'Z' && c >= 'A')
+		c += 32;
+	return (c);
 }

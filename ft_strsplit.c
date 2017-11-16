@@ -6,16 +6,16 @@
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 10:27:05 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/16 16:25:43 by rjakubec         ###   ########.fr       */
+/*   Updated: 2017/11/16 19:00:55 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_wordscount(const char *s, const char c)
+static	int		ft_wordscount(const char *s, const char c)
 {
-	int i;
-	int words;
+	int		i;
+	int		words;
 
 	i = 0;
 	words = 0;
@@ -31,7 +31,7 @@ int		ft_wordscount(const char *s, const char c)
 	return (i);
 }
 
-int		ft_strsizeforsplit(const char *s, const char c)
+static	int		ft_strsizeforsplit(const char *s, const char c)
 {
 	int		i;
 
@@ -44,7 +44,7 @@ int		ft_strsizeforsplit(const char *s, const char c)
 	return (i);
 }
 
-char	**ft_strsplit(const char *s, const char c)
+char			**ft_strsplit(const char *s, const char c)
 {
 	char	**t;
 	int		i;

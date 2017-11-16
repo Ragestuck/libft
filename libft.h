@@ -6,7 +6,7 @@
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 15:43:09 by rjakubec          #+#    #+#             */
-/*   Updated: 2017/11/16 16:27:08 by rjakubec         ###   ########.fr       */
+/*   Updated: 2017/11/16 20:02:17 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	ft_memdel(void **ptr);
+void	*ft_memmove(void *dst, const void *src, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putchar(char c);
@@ -50,7 +51,7 @@ void	ft_striter(char *s, void (*f)(char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strjoin(const char *s1, const char *s2);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
-int		ft_strlen(const char *s);
+size_t	ft_strlen(const char *s);
 char	*ft_strmap(char const *s, char (*f)(char));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strncat(char *s1, const char *s2, size_t n);
@@ -64,7 +65,7 @@ char	**ft_strsplit(const char *s, const char c);
 char	*ft_strstr(const char *s1, const char *s2);
 char	*ft_strsub(const char *s, unsigned int start, size_t len);
 char	*ft_strtrim(const char *s);
-void	ft_tolower(char *str);
-void	ft_toupper(char *str);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
 
 #endif
