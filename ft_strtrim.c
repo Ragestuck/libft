@@ -6,28 +6,41 @@
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 10:17:35 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/16 18:30:33 by rjakubec         ###   ########.fr       */
+/*   Updated: 2017/11/20 15:11:00 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strtrim(const char *s)
+char		*ft_strtrim(const char *s)
 {
-	char	*d;
+	char	*tmp;
+	char	*ret;
 	int		i;
+	int		j;
 
-	i = 0;
-	d = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (!d)
-		return (NULL);
-	while (*s)
+	j = 0;
+	tmp = (char *)s;
+	while (*tmp == ' ' || *tmp == '\t' || *tmp == '\n')
+		tmp++;
+	if (!tmp)
+		i = 1;
+	else
 	{
-		if (*s != ' ' || *s != '\n' || *s != '\t')
-			d[i++] = *s;
-		s++;
+		i = ft_strlen(tmp) - 1;
+		while (tmp[i] == ' ' || tmp[i] == '\t' || tmp[i] == '\n')
+			i--;
+		i += 2;
 	}
-	d[i] = '\0';
-	return (d);
+	ret = (char *)malloc(sizeof(char) * i);
+	if (!ret)
+		return (NULL);
+	while (j < i - 1)
+	{
+		ret[j] = tmp[j];
+		j++;
+	}
+	ret[j] = '\0';
+	return (ret);
 }

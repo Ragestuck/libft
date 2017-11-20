@@ -6,15 +6,15 @@
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 11:44:46 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/16 17:40:12 by rjakubec         ###   ########.fr       */
+/*   Updated: 2017/11/20 11:23:47 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_atoi(const char *str)
 {
-	int		sign;
-	int		nb;
-	int		i;
+	int				sign;
+	long long		nb;
+	int				i;
 
 	nb = 0;
 	i = 0;

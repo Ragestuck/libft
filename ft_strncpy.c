@@ -6,7 +6,7 @@
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 12:27:06 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/16 19:31:51 by rjakubec         ###   ########.fr       */
+/*   Updated: 2017/11/20 11:43:49 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t n)
 	start = n;
 	while (*src && n--)
 		*dst++ = *src++;
-	if (n < start)
+	if (n <= start)
 		ft_bzero(dst, n);
 	return (ret);
 }

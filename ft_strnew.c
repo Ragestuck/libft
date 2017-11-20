@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsk <rsk@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 13:20:38 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/14 13:42:08 by rsk              ###   ########.fr       */
+/*   Updated: 2017/11/20 12:48:24 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 char	*ft_strnew(size_t n)
 {
-	return (char *)ft_memalloc(n);
+	return ((char *)ft_memalloc(n + 1));
 }

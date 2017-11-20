@@ -6,7 +6,7 @@
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 15:43:09 by rjakubec          #+#    #+#             */
-/*   Updated: 2017/11/16 20:02:17 by rjakubec         ###   ########.fr       */
+/*   Updated: 2017/11/20 12:36:38 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		ft_isdigit(int c);
 int		ft_isprint(int c);
 char	*ft_itoa(int n);
 void	*ft_memalloc(size_t n);
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
+void	*ft_memccpy(void *dst, void *src, int c, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
@@ -55,7 +55,7 @@ size_t	ft_strlen(const char *s);
 char	*ft_strmap(char const *s, char (*f)(char));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strncat(char *s1, const char *s2, size_t n);
-int		ft_strncmp(const char *str1, const char *str2, const int n);
+int		ft_strncmp(const char *str1, const char *str2, size_t n);
 char	*ft_strncpy(char *dst, const char *src, size_t n);
 int		ft_strnequ(const char *s1, const char *s2, size_t n);
 char	*ft_strnew(size_t n);
