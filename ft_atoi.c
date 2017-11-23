@@ -6,28 +6,26 @@
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 11:44:46 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/20 11:23:47 by rjakubec         ###   ########.fr       */
+/*   Updated: 2017/11/22 13:07:02 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		ft_atoi(const char *str)
 {
-	int				sign;
-	long long		nb;
-	int				i;
+	int n;
+	int sign;
 
-	nb = 0;
-	i = 0;
-	while (str[i] == '\t' || str[i] == ' ' || str[i] == '\n' || str[i] == '\v'
-			|| str[i] == '\r' || str[i] == '\f')
-		i++;
-	sign = ((str[i] == '-') ? -1 : 1);
-	i = (str[i] == '-' || str[i] == '+') ? i + 1 : i;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nb = (nb * 10) + (str[i] - 48);
-		i++;
-	}
-	nb *= sign;
-	return (nb);
+	sign = 1;
+	n = 0;
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str++;
+	if (*str == '-')
+		sign *= -1;
+	if (*str == '+' || *str == '-')
+		str++;
+	while (*str != '\0' && ft_isdigit(*str))
+		n = n * 10 + (*str++ - '0');
+	return (n * sign);
 }

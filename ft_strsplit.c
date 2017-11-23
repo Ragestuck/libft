@@ -6,7 +6,7 @@
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 10:27:05 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/16 19:00:55 by rjakubec         ###   ########.fr       */
+/*   Updated: 2017/11/22 14:14:58 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,57 +14,45 @@
 
 static	int		ft_wordscount(const char *s, const char c)
 {
-	int		i;
 	int		words;
 
-	i = 0;
-	words = 0;
-	while (s[i])
-	{
-		if (s[i] != c)
-		{
-			if (s[i + 1] == c || s[i + 1] == '\0')
-				words++;
-		}
-		i++;
-	}
-	return (i);
-}
-
-static	int		ft_strsizeforsplit(const char *s, const char c)
-{
-	int		i;
-
-	i = 0;
-	while (*s != c && *s != '\0')
-	{
-		i++;
+	while (*s && *s == c)
 		s++;
+	words = (*s) ? 1 : 0;
+	while (*s)
+	{
+		if (*s == c && s[1] && s[1] != c)
+			words++;
+		++s;
 	}
-	return (i);
+	return (words);
 }
 
 char			**ft_strsplit(const char *s, const char c)
 {
-	char	**t;
-	int		i;
-	int		j;
+	int		words;
+	char	*start;
+	char	**tab;
 
-	j = 0;
-	i = ft_wordscount(s, c) + 1;
-	t = (char **)malloc(sizeof(char *) * i);
-	if (!t)
+	if (!s)
 		return (NULL);
-	while (i--)
+	words = ft_wordscount((char *)s, c);
+	tab = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!tab)
+		return (NULL);
+	start = (char *)s;
+	while (*s)
 	{
-		while (*s == c || *s == '\0')
-			s++;
-		t[j] = ft_strsub(s, 0, ft_strsizeforsplit(s, c));
-		if (!t[j])
-			return (NULL);
-		s += ft_strsizeforsplit(s, c);
-		j++;
+		if (*s == c)
+		{
+			if (start != s)
+				*(tab++) = ft_strsub(start, 0, (s - start));
+			start = (char *)s + 1;
+		}
+		s++;
 	}
-	t[j] = NULL;
-	return (t);
+	if (start != s)
+		*(tab++) = ft_strsub(start, 0, (s - start));
+	*tab = NULL;
+	return (tab - words);
 }

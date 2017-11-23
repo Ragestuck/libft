@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_power.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/14 11:54:26 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/22 14:29:55 by rjakubec         ###   ########.fr       */
+/*   Created: 2017/11/22 15:08:08 by rjakubec          #+#    #+#             */
+/*   Updated: 2017/11/22 15:08:15 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t		ft_strlcat(char *dst, const char *src, size_t len)
+int		ft_power(int nb, int power)
 {
-	size_t	i;
-	char	*s1;
-	char	*s2;
+	int nbcpy;
 
-	s1 = (char*)ft_memchr(dst, '\0', len);
-	if (!s1)
-		return (len + ft_strlen((char*)src));
-	s2 = (char*)src;
-	i = ft_strlen((char*)dst) + ft_strlen((char*)src);
-	while ((size_t)(s1 - dst) < len - 1 && *s2)
-		*(s1++) = *(s2++);
-	*s1 = '\0';
-	return (i);
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	if (power == 1)
+		return (nb);
+	nbcpy = nb;
+	while (power > 1)
+	{
+		nb = nb * nbcpy;
+		power--;
+	}
+	return (nb);
 }

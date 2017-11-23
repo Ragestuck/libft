@@ -6,7 +6,7 @@
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 11:58:26 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/20 12:38:35 by rjakubec         ###   ########.fr       */
+/*   Updated: 2017/11/22 14:02:04 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 		s1++;
 		s2++;
 	}
+	if (n == 0)
+		return (0);
 	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }

@@ -6,7 +6,7 @@
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 10:00:29 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/16 17:59:09 by rjakubec         ###   ########.fr       */
+/*   Updated: 2017/11/22 13:15:44 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int		ft_strnequ(const char *s1, const char *s2, size_t n)
 {
+	if (!s1 || !s2)
+		return (0);
 	return (!ft_strncmp(s1, s2, n));
 }

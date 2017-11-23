@@ -6,7 +6,7 @@
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 11:18:06 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/16 15:37:49 by rjakubec         ###   ########.fr       */
+/*   Updated: 2017/11/22 13:20:09 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 void	ft_putendl(const char *s)
 {
-	ft_putstr(s);
-	write(1, "\n", 1);
+	if (s)
+	{
+		ft_putstr(s);
+		write(1, "\n", 1);
+	}
 }

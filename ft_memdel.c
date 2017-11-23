@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rsk <rsk@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 13:18:15 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/14 13:41:38 by rsk              ###   ########.fr       */
+/*   Updated: 2017/11/22 13:10:15 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_memdel(void **ptr)
 {
-	free(*ptr);
-	*ptr = NULL;
+	if (ptr)
+	{
+		free(*ptr);
+		*ptr = NULL;
+	}
 }

@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/14 11:54:26 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/22 14:29:55 by rjakubec         ###   ########.fr       */
+/*   Created: 2017/11/22 16:06:18 by rjakubec          #+#    #+#             */
+/*   Updated: 2017/11/22 17:23:16 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlcat(char *dst, const char *src, size_t len)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	size_t	i;
-	char	*s1;
-	char	*s2;
+	t_list *tmp;
 
-	s1 = (char*)ft_memchr(dst, '\0', len);
-	if (!s1)
-		return (len + ft_strlen((char*)src));
-	s2 = (char*)src;
-	i = ft_strlen((char*)dst) + ft_strlen((char*)src);
-	while ((size_t)(s1 - dst) < len - 1 && *s2)
-		*(s1++) = *(s2++);
-	*s1 = '\0';
-	return (i);
+	if (!alst || !del)
+		return ;
+	while (*alst)
+	{
+		tmp = (*alst)->next;
+		del((*alst)->content, (*alst)->content_size);
+		free(*alst);
+		(*alst) = tmp;
+	}
+	*alst = NULL;
+	return ;
 }

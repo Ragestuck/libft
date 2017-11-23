@@ -6,7 +6,7 @@
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 11:44:05 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/20 12:17:00 by rjakubec         ###   ########.fr       */
+/*   Updated: 2017/11/22 14:00:05 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int i;
+	char *i;
 
-	i = ft_strlen(s);
-	while (s != (s + i))
+	i = NULL;
+	while (*s != '\0')
 	{
-		if (s[i] == c)
-			return ((char *)s + i);
-		i--;
+		if (*s == (char)c)
+			i = (char *)s;
+		s++;
 	}
-	return (NULL);
+	if (*s == (char)c)
+		return ((char *)s);
+	else
+		return (i);
 }

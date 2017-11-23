@@ -6,7 +6,7 @@
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 13:24:28 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/16 15:47:59 by rjakubec         ###   ########.fr       */
+/*   Updated: 2017/11/22 13:10:31 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_strdel(char **as)
 {
-	ft_memdel((void **)as);
+	if (as)
+		ft_memdel((void **)as);
 }

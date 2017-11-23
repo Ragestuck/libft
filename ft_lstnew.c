@@ -1,46 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rjakubec <rjakubec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/16 10:17:35 by rsk               #+#    #+#             */
-/*   Updated: 2017/11/22 11:46:09 by rjakubec         ###   ########.fr       */
+/*   Created: 2017/11/22 15:45:18 by rjakubec          #+#    #+#             */
+/*   Updated: 2017/11/22 17:18:26 by rjakubec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-static	int	ft_isblank(int c)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	if (c == ' ' || c == '\n' || c == '\t')
-		return (1);
-	return (0);
-}
+	t_list *newelem;
 
-char		*ft_strtrim(const char *s)
-{
-	char	*tmp;
-	int		i;
-	int		j;
-
-	if (!s)
+	newelem = (t_list *)malloc(sizeof(t_list));
+	if (!newelem)
 		return (NULL);
-	i = 0;
-	j = 0;
-	tmp = ft_strnew(ft_strlen(s));
-	if (!tmp)
-		return (NULL);
-	while (j < (int)ft_strlen(s))
+	if (!content)
 	{
-		if (!i && ft_isblank(s[j]))
-			j++;
-		else
-			tmp[i++] = s[j++];
+		newelem->content = NULL;
+		newelem->content_size = 0;
 	}
-	while (ft_isblank(tmp[--i]))
-		tmp[i] = '\0';
-	return (tmp);
+	else
+	{
+		newelem->content = malloc(sizeof(content_size));
+		if (!(newelem->content))
+			return (NULL);
+		ft_memcpy(newelem->content, content, content_size);
+		newelem->content_size = content_size;
+	}
+	newelem->next = NULL;
+	return (newelem);
 }
